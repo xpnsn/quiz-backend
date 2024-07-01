@@ -28,7 +28,6 @@ public class UserService {
 
     public void saveNewUser(User user) {
         user.setPassword(passwordEncoder().encode(user.getPassword()));
-        user.setScore(0);
         userDao.save(user);
     }
 

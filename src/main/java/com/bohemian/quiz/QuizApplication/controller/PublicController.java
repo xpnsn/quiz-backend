@@ -21,7 +21,7 @@ public class PublicController {
     public ResponseEntity<?> saveUser(@RequestBody User user) {
         if(userService.getUserByUsername(user.getUsername()) == null)  {
             userService.saveNewUser(user);
-            return new ResponseEntity<>("CREATED", HttpStatus.CREATED);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }

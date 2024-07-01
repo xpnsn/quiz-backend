@@ -1,13 +1,11 @@
 package com.bohemian.quiz.QuizApplication.question;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.bohemian.quiz.QuizApplication.quiz.Quiz;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
-@Entity
+@Entity(name = "question_table")
 public class Question {
 
     @Id
@@ -19,5 +17,5 @@ public class Question {
     private String option3;
     private String option4;
     private String correctAnswer;
-    private String difficultyLevel;
+    private String quizUuid;
 }
