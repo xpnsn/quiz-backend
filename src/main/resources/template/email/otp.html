@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style type="text/css">
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #3a5a78;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .content {
+            padding: 30px;
+        }
+        .otp-box {
+            background: #f0f8ff;
+            border: 1px dashed #3a5a78;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .otp-code {
+            font-size: 32px;
+            letter-spacing: 10px;
+            font-weight: bold;
+            color: #3a5a78;
+            margin: 15px 0;
+            padding: 10px;
+        }
+        .footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666666;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3a5a78;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+                border-radius: 0;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Main Container -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tr>
+        <td align="center" style="padding: 20px;">
+            <table class="container" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td class="content">
+                        <h1 style="margin-top: 0; color: #3a5a78;">OTP Verification</h1>
+                        <p>Hello,</p>
+                        <p>Your One-Time Password (OTP) for authentication is:</p>
+
+                        <!-- OTP Display Box -->
+                        <div class="otp-box">
+                            <p style="margin: 0; font-size: 14px;">Please enter this code to complete your verification:</p>
+                            <div class="otp-code">{{otp}}</div>
+                            <p style="margin: 0; font-size: 14px;">This OTP is valid for <strong>10 minutes</strong> only.</p>
+                        </div>
+
+                        <p>If you didn't request this code, please ignore this email or contact our support team immediately.</p>
+
+                        <!-- Action Button (for verification pages) -->
+<!--                        <table cellspacing="0" cellpadding="0" border="0" align="center">-->
+<!--                            <tr>-->
+<!--                                <td>-->
+<!--                                    <a href="#verify" class="button" style="text-decoration: none; color: white;">Complete Verification</a>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+
+                        <!-- Security Notice -->
+                        <div style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0;">
+                            <h3 style="margin-top: 0; color: #795548;">Security Tip</h3>
+                            <p style="margin-bottom: 0;">Never share this OTP with anyone. Our team will never ask for your OTP via phone, email, or messaging platforms.</p>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td class="footer">
+                        <p>© 2025 Intellect. All rights reserved.</p>
+                        <p style="font-size: 11px; color: #999999;">This is an automated message. Please do not reply to this email.</p>
+                        <p style="font-size: 11px; color: #999999;">
+                            <a href="#privacy" style="color: #999999; text-decoration: underline;">Privacy Policy</a> |
+                            <a href="#terms" style="color: #999999; text-decoration: underline;">Terms of Service</a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+

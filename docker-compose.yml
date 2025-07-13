@@ -1,0 +1,40 @@
+services:
+  intellect:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - intellectdb
+      - intellectotpdb
+    environment:
+      DB_PASSWORD : admin
+      DB_URL : jdbc:postgresql://intellectdb:5432/intellect_db
+      DB_USER : postgres
+      JWT_SECRET : 6a627a7fb025e2c5db643267523a1c801c1178bed30331a2606fe93f4dd9aa7b
+      MAIL_PASSWORD : hbiv brkv wmja zvoi
+      MAIL_USERNAME : kumarehimanshu2@gmail.com
+      REDIS_HOST : intellectotpdb
+      REDIS_PORT : 6379
+
+  intellectdb:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: intellect_db
+    volumes:
+      - intellect_data:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+
+  intellectotpdb:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - intellect_otp_data:/var/lib/redis/data
+
+volumes:
+  intellect_otp_data:
+  intellect_data:

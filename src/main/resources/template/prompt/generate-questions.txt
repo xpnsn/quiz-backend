@@ -1,0 +1,18 @@
+Generate {{size}} multiple choice questions on the topic {{topic}} with difficulty level {{level}}.
+
+Each question must be returned as a JSON object in this format:
+{
+  "title": "Question goes here without any numbering or labels.",
+  "options": ["Option A", "Option B", "Option C", "Option D"],
+  "correctAnswer": "Exact matching option from the list above, no letters like A/B/C/D.",
+  "quizId": "ai-quiz"
+}
+
+Rules:
+- Do not prefix options with letters like A), B), etc.
+- Do not add newlines, slashes, or markdown formatting.
+- Keep options as plain strings.
+- Make sure "correctAnswer" is one of the options, not just a letter.
+- Return a JSON array of these question objects.
+
+Output only valid JSON. No explanation or extra text.
